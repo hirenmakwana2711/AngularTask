@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th>Sampling Time</th>
+            <th *ngFor="let label of labels">{{ label }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of tableData">
+            <td>{{ data.SamplingTime | dateConvert:'dd-MM-yyyy hh:mm:ss a' }}</td>
+            <td *ngFor="let label of labels">
+                {{ getProperty(data.Properties, label) }}
+            </td>
+        </tr>
+    </tbody>
+</table>
